@@ -1,0 +1,16 @@
+openai~=1.54.3
+python-dotenv~=1.0.1
+pandas~=2.2.3
+pydantic~=2.9.2
+requests
+beautifulsoup4~=4.12.3
+html2text~=2024.2.26
+tiktoken~=0.8.0
+selenium~=4.26.1
+readability-lxml
+streamlit~=1.40.0
+streamlit-tags
+openpyxl
+google-generativeai
+webdriver-manager
+ollama~=0.3.3
