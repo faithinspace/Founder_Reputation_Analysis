@@ -67,7 +67,7 @@ def setup_selenium(attended_mode=False):
             options.add_argument(option)
 
     # Initialize the WebDriver
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(options=options)
     return driver
 
 
