@@ -58,7 +58,7 @@ def is_running_in_docker():
 
 def setup_selenium(attended_mode=False):
     options = Options()
-    service = Service(GeckoDriverManager().install())
+    service = Service(ChromeDriverManager().install())
 
     # Apply headless options based on whether the code is running in Docker
     if is_running_in_docker():
@@ -69,8 +69,9 @@ def setup_selenium(attended_mode=False):
         # Not running inside Docker, use the normal headless options
         for option in HEADLESS_OPTIONS:
             options.add_argument(option)
-    # Initialize the WebDriver with Firefox
-    driver = webdriver.Firefox(service=service, options=options)
+
+    # Initialize the WebDriver
+    driver = webdriver.Chrome(service=service, options=options)
     return driver
 
 def fetch_html_selenium(url, attended_mode=False, driver=None):
