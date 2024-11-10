@@ -24,14 +24,6 @@ from urllib.parse import urlparse
 from assets import PRICING
 import os
 
-
-def installff():
-  os.system('sbase install geckodriver')
-  os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
-
-_ = installff()
-
-
 # Initialize Streamlit app
 st.set_page_config(page_title="Starship Ventures: Founder Reputation Analysis", page_icon="🚀")
 st.title("Founder Reputation Analysis 🚀")
