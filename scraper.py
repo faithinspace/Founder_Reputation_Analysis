@@ -69,7 +69,9 @@ def setup_selenium(attended_mode=False):
         # Not running inside Docker, use the normal headless options
         for option in HEADLESS_OPTIONS:
             options.add_argument(option)
-
+    # Initialize the WebDriver with Firefox
+    driver = webdriver.Firefox(service=service, options=options)
+    return driver
 
 def fetch_html_selenium(url, attended_mode=False, driver=None):
     if driver is None:
