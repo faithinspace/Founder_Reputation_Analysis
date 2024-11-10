@@ -66,6 +66,7 @@ def setup_selenium(attended_mode=False):
     #     for option in HEADLESS_OPTIONS:
     #         options.add_argument(option)
     options.add_argument("--headless=new")
+    options.add_argument("--disable-gpu")
     # Initialize the WebDriver
     driver = webdriver.Chrome(service=service, options=options)
     return driver
