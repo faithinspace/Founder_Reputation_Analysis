@@ -27,6 +27,7 @@ import os
 # Initialize Streamlit app
 st.set_page_config(page_title="Starship Ventures: Founder Reputation Analysis", page_icon="🚀")
 st.title("Founder Reputation Analysis 🚀")
+st.text("Welcome! This is an app that helps investors analyze the online reputation of founders in lesser time than manual searches. It finds industry and market-specific mentions, summarizing the article's sentiment of the founder and translating it into English, saving you time from reading it.")
 
 # Initialize session state variables
 if "scraping_state" not in st.session_state:

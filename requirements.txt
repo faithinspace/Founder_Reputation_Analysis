@@ -14,3 +14,4 @@ openpyxl
 google-generativeai
 webdriver-manager
 ollama~=0.3.3
+chromedriver_installer
