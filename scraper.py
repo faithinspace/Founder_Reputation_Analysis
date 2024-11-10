@@ -22,6 +22,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from openai import OpenAI
 from ollama import Client
+from webdriver_manager.core.os_manager import ChromeType
 
 from api_management import get_api_key
 from assets import (
@@ -54,7 +55,7 @@ def is_running_in_docker():
 
 def setup_selenium(attended_mode=False):
     options = Options()
-    service = Service(ChromeDriverManager().install())
+    service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
     # Apply headless options based on whether the code is running in Docker
     if is_running_in_docker():
