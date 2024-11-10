@@ -15,16 +15,12 @@ import tiktoken
 
 from dotenv import load_dotenv
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 
 
 from openai import OpenAI
 from ollama import Client
-from webdriver_manager.core.os_manager import ChromeType
 from webdriver_manager.firefox import GeckoDriverManager
 
 from api_management import get_api_key
@@ -41,7 +37,7 @@ from assets import (
 load_dotenv()
 
 
-# Set up the Chrome WebDriver options
+# Set up the WebDriver options
 
 
 def is_running_in_docker():
@@ -58,7 +54,7 @@ def is_running_in_docker():
 
 def setup_selenium(attended_mode=False):
     options = Options()
-    service = Service(ChromeDriverManager().install())
+    service = Service(GeckoDriverManager().install())
 
     # Apply headless options based on whether the code is running in Docker
     if is_running_in_docker():
@@ -69,9 +65,8 @@ def setup_selenium(attended_mode=False):
         # Not running inside Docker, use the normal headless options
         for option in HEADLESS_OPTIONS:
             options.add_argument(option)
-
-    # Initialize the WebDriver
-    driver = webdriver.Chrome(service=service, options=options)
+    # Initialize the WebDriver with Firefox
+    driver = webdriver.Firefox(service=service, options=options)
     return driver
 
 def fetch_html_selenium(url, attended_mode=False, driver=None):
