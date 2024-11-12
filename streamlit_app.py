@@ -30,6 +30,7 @@ st.title("Founder Reputation Analysis 🚀")
 st.text("Welcome! This is an app that helps investors analyze the online reputation of founders in lesser time than manual searches. It finds industry and market-specific mentions, summarizing the article's sentiment of the founder and translating it into English, saving you time from reading it.")
 st.text("It costs about $0.0004 per query, so you would need an OpenAI key, which you can trial here for free: https://community.openai.com/t/openai-api-keys-in-free-account/348972 . After each query, you can see on the sidebar how many tokens you used and the precise cost per search.")
 st.link_button("Click here for a short video tutorial on how it works", "https://www.canva.com/design/DAGWGtY-qiA/_1dEHBDEM_dsq29ncTZ6Tg/watch?utm_content=DAGWGtY-qiA&utm_campaign=designshare&utm_medium=link&utm_source=editor")
+st.text("A suggestion for a founder to search is Dieter Castelian, an early-stage founder so he is not too well-known and such a tool would be useful in finding out his industry reputation")
 
 # Initialize session state variables
 if "scraping_state" not in st.session_state:
