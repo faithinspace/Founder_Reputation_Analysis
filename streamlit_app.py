@@ -28,6 +28,8 @@ import os
 st.set_page_config(page_title="Starship Ventures: Founder Reputation Analysis", page_icon="🚀")
 st.title("Founder Reputation Analysis 🚀")
 st.text("Welcome! This is an app that helps investors analyze the online reputation of founders in lesser time than manual searches. It finds industry and market-specific mentions, summarizing the article's sentiment of the founder and translating it into English, saving you time from reading it.")
+st.text("It costs about $0.0004 per query, so you would need an OpenAI key, which you can trial here for free: https://community.openai.com/t/openai-api-keys-in-free-account/348972 . After each query, you can see on the sidebar how many tokens you used and the precise cost per search.")
+st.link_button("Click here for a short video tutorial on how it works", "https://www.canva.com/design/DAGWGtY-qiA/_1dEHBDEM_dsq29ncTZ6Tg/watch?utm_content=DAGWGtY-qiA&utm_campaign=designshare&utm_medium=link&utm_source=editor")
 
 # Initialize session state variables
 if "scraping_state" not in st.session_state:
@@ -57,12 +59,17 @@ model_selection = st.sidebar.selectbox(
 url_input = st.sidebar.text_input("Do not enter anything here")
 # Process URLs
 urls = list([
-    "https://www.f6s.com/member/dietercastelein",
+
     "https://www.nac-zaken.nl/nieuws/greneer-gaat-voor-een-versnelde-energietransitie-met-financieringsuitbreiding-bij-beequip-",
     "https://mtsprout.nl/ranglijst/challenger50-van-2021/greener-power-solutions",
     "https://www.deondernemer.nl/innovatie/scale-up-greener-power-solutions-breidt-uit-naar-het-verenigd-koninkrijk~1146101"
+    "https://www.f6s.com/member/dietercastelein",
     ]
 )
+# url_input = st.sidebar.text_input("Enter URL(s) separated by whitespace")
+# # Process URLs
+# urls = url_input.strip().split()
+
 num_urls = len(urls)
 
 person = st.sidebar.text_input("Enter the person you're looking up")
