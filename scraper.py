@@ -56,7 +56,7 @@ def setup_selenium(attended_mode=False):
     options = Options()
     service = Service(GeckoDriverManager().install())
 
-    # Apply headless options based on whether the code is running in Docker
+    # Apply headless optqions based on whether the code is running in Docker
     if is_running_in_docker():
         # Running inside Docker, use Docker-specific headless options
         for option in HEADLESS_OPTIONS_DOCKER:
