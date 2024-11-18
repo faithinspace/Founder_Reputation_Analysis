@@ -6,6 +6,7 @@ from collections import OrderedDict
 from datetime import datetime
 from typing import List, Type
 
+import WebDriverManager
 import pandas as pd
 from bs4 import BeautifulSoup
 from pydantic import BaseModel, create_model
@@ -52,7 +53,7 @@ def is_running_in_docker():
 
 def setup_selenium(attended_mode=False):
     options = webdriver.ChromeOptions()
-    service = Service(ChromeDriverManager().install())
+    service = Service(WebDriverManager.chromedriver().browserVersion("114.0.5735.16").setup())
 
     # Apply headless options based on whether the code is running in Docker
     if is_running_in_docker():
