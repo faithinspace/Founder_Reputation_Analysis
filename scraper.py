@@ -52,7 +52,7 @@ def is_running_in_docker():
 
 def setup_selenium(attended_mode=False):
     options = webdriver.ChromeOptions()
-    service = Service(ChromeDriverManager().install())
+    service = Service()
 
     # Apply headless options based on whether the code is running in Docker
     if is_running_in_docker():
