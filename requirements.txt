@@ -8,7 +8,6 @@ html2text~=2024.2.26
 tiktoken~=0.8.0
 selenium~=4.26.1
 seleniumbase
-webdriver-manager
 readability-lxml
 streamlit~=1.40.1
 streamlit-tags
