@@ -1,3 +1,2 @@
 chromium
 chromium-driver
-google-chrome-stable_current_amd64
