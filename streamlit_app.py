@@ -63,7 +63,7 @@ urls = list([
 
     "https://www.nac-zaken.nl/nieuws/greneer-gaat-voor-een-versnelde-energietransitie-met-financieringsuitbreiding-bij-beequip-",
     "https://mtsprout.nl/ranglijst/challenger50-van-2021/greener-power-solutions",
-    "https://www.deondernemer.nl/innovatie/scale-up-greener-power-solutions-breidt-uit-naar-het-verenigd-koninkrijk~1146101"
+    "https://www.deondernemer.nl/innovatie/scale-up-greener-power-solutions-breidt-uit-naar-het-verenigd-koninkrijk~1146101",
     "https://www.f6s.com/member/dietercastelein",
     ]
 )
