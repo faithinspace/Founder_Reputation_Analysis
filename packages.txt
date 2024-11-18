@@ -1,2 +1,2 @@
 firefox-esr
-firefox
+firefox-locale-en
