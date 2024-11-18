@@ -8,8 +8,9 @@ html2text~=2024.2.26
 tiktoken~=0.8.0
 selenium~=4.26.1
 readability-lxml
-streamlit~=1.40.0
+streamlit~=1.40.1
 streamlit-tags
+geckodriver
 openpyxl
 google-generativeai
 webdriver-manager
