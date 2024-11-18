@@ -18,7 +18,6 @@ from selenium import webdriver
 
 from openai import OpenAI
 from ollama import Client
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
 from api_management import get_api_key
@@ -52,7 +51,7 @@ def is_running_in_docker():
 
 def setup_selenium(attended_mode=False):
     options = webdriver.ChromeOptions()
-    service = Service(ChromeDriverManager().install())
+    service = Service()
 
     # Apply headless options based on whether the code is running in Docker
     if is_running_in_docker():
@@ -67,6 +66,7 @@ def setup_selenium(attended_mode=False):
     # options.add_argument("--headless")
     driver = webdriver.Chrome(service=service, options=options)
     return driver
+
 
 def fetch_html_selenium(url, attended_mode=False, driver=None):
     if driver is None:
