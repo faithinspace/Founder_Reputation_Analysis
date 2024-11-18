@@ -1,7 +1,6 @@
 import os
 import random
 import time
-import re
 import json
 from collections import OrderedDict
 from datetime import datetime
@@ -15,13 +14,12 @@ import tiktoken
 
 from dotenv import load_dotenv
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.firefox.service import Service
 
 
 from openai import OpenAI
 from ollama import Client
-from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 
 from api_management import get_api_key
 from assets import (
@@ -53,10 +51,10 @@ def is_running_in_docker():
 
 
 def setup_selenium(attended_mode=False):
-    options = Options()
-    service = Service(GeckoDriverManager().install())
+    options = webdriver.ChromeOptions()
+    service = Service(ChromeDriverManager().install())
 
-    # Apply headless optqions based on whether the code is running in Docker
+    # Apply headless options based on whether the code is running in Docker
     if is_running_in_docker():
         # Running inside Docker, use Docker-specific headless options
         for option in HEADLESS_OPTIONS_DOCKER:
@@ -67,7 +65,7 @@ def setup_selenium(attended_mode=False):
             options.add_argument(option)
     # Initialize the WebDriver with Firefox
     # options.add_argument("--headless")
-    driver = webdriver.Firefox(service=service, options=options)
+    driver = webdriver.Chrome(service=service, options=options)
     return driver
 
 def fetch_html_selenium(url, attended_mode=False, driver=None):
