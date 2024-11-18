@@ -10,8 +10,7 @@ selenium~=4.26.1
 readability-lxml
 streamlit~=1.40.1
 streamlit-tags
-geckodriver
+geckodriver==0.35.0
 openpyxl
 google-generativeai
-webdriver-manager
 ollama~=0.3.3
